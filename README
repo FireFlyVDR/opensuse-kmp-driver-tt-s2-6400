@@ -1,0 +1,21 @@
+openSuse KMP SRPM for TechoTrend S2-6400
+
+This repo contains Source RPMs for openSuse Kernel Module Package of the Technotrend S2-6400 DVB-S2 card.
+
+In addition to the saa716x modules they also contain a patched stv090x module for DVBv5 for displaying correct values of signal strength (STR) and carrier noise ratio (CNR).
+
+The firmware was downloaded from http://www.aregel.de/downloads/ and is included for convenience.
+
+The driver source was downloaded from https://github.com/s-moch/linux-saa716x and adapted to compile with openSuse kernels.
+
+The copyright of firmware and drivers source belongs to their respective owners.
+
+
+Installation:
+* build the RPM packages from the SRPM for the currently running kernel:
+
+rpmbuild -rb v4l-dvb-saa716x-*.srpm
+
+* install the three created rpms:
+
+rpm -Uvh ../RPMS/noarch/v4l-dvb-saa716x-firmware-*.noarch.rpm ../RPMS/noarch/v4l-dvb-saa716x-udev-*.noarch.rpm ../RPMS/x86_64/v4l-dvb-saa716x-kmp-default-*.x86_64.rpm
